@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x >= 0){
+            string numStr = to_string(x);
+            vector<int> digits;
+            for (char digit: numStr){
+                digits.push_back(digit - '0');
+            }
+            vector<int> reverseDigits = digits;  //Make a copy
+            reverse(reverseDigits.begin(), reverseDigits.end()); /*Reverse
+            the copy */ 
+             if (reverseDigits == digits){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        
+    return false;
+    }
+};
