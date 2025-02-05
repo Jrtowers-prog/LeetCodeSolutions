@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int scoreOfString(string s) {
+        int output = 0;
+        for (int i = 0; i < s.size()-1; i++){
+            char ch1 = s[i];
+            char ch2 = s[i+1];
+            int Ascii1 = static_cast<int>(ch1);
+            int Ascii2 = static_cast<int>(ch2);
+            int res = Ascii2-Ascii1;
+            int Ascii = abs(res);
+            output += abs(Ascii2-Ascii1);
+        }
+    return output;
+    }
+};
