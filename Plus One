@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int n = digits.size();
+        for (int i = (n-1); i >= 0; i--){
+            if (digits[i] <9){ //if less than 9, add 1
+                digits[i]+= 1;
+                return digits;
+            }
+            digits[i] = 0; //if 9 set to 0
+        }
+        digits.insert(digits.begin(),1);  /*if code gets here it means it has bypassed the if loop nested in the                                             for loop as all digits are 9, meaning they have all been changed to                                               0 and a 1 should be inserted at the start.*/
+        return digits;
+    }
+};
